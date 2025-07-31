@@ -52,3 +52,12 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# MacOS
+.DS_Store
+
+# Intellij Idea
+.idea
+
+*.csproj.DotSettings*
+*.sln.DotSettings*
