@@ -1,4 +1,6 @@
 ﻿using System;
+using GameScores.GamesCollector.SeedUrlProvider;
+using GameScores.GamesCollector.SeedUrlProvider.Contracts;
 using GameScores.GamesCollector.ServiceDiscovery.Redis;
 using GameScores.GamesCollector.Worker.BackgroundJobs;
 using GameScores.GamesCollector.Worker.DependencyInjection;
@@ -21,7 +23,8 @@ IHost host = Host.CreateDefaultBuilder(args)
             services
                 .AddDataCollector(ctx.Configuration)
                 .AddServiceDiscovery(ctx.Configuration)
-                .AddHostedService<ServiceGroupManagerJob>();
+                .AddSingleton<ISeedUrlProvider, MockSeedUrlProvider>()
+                .AddHostedService<SchedulerJob>();
         }
     )
     .ConfigureLogging((hostingContext, logging) =>

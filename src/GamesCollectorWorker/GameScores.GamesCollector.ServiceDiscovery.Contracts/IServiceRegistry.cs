@@ -7,7 +7,7 @@ namespace GameScores.GamesCollector.ServiceDiscovery.Contracts;
 
 public interface IServiceRegistry
 {
-    Task RegisterAsync(string serviceId, CancellationToken stoppingToken);
+    Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken);
 
     Task<IEnumerable<string>> GetGroupMembersAsync(string group, CancellationToken stoppingToken);
 

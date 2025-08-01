@@ -11,7 +11,9 @@ namespace GameScores.GamesCollector.ServiceDiscovery.Redis;
 
 public class RedisServiceRegistry : IServiceRegistry
 {
-    private const string WORKERS_GROUP_PREFIX = "game_collectors";
+    private const string GROUP_NOTIFICATIONS_CHANNEL = "workers";
+
+    private const char GROUP_NAME_SEPARATOR = '/';
     
     private readonly IConnectionMultiplexer _multiplexer;
 
@@ -24,14 +26,13 @@ public class RedisServiceRegistry : IServiceRegistry
         _multiplexer = multiplexer;
     }
     
-    public async Task RegisterAsync(string serviceId, CancellationToken stoppingToken)
+    public async Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken)
     {
-        var serviceInstanceId = Guid.NewGuid().ToString().Substring(0, 5);
-        var serviceKey = $"{WORKERS_GROUP_PREFIX}/{serviceId}-{serviceInstanceId}";
+        var serviceKey = $"{groupId}{GROUP_NAME_SEPARATOR}{serviceId}";
         
         await _multiplexer.GetDatabase().StringSetAsync(serviceKey, string.Empty);
 
-        await _multiplexer.GetSubscriber().PublishAsync(WORKERS_GROUP_PREFIX, string.Empty);
+        await _multiplexer.GetSubscriber().PublishAsync(GROUP_NOTIFICATIONS_CHANNEL, string.Empty);
     }
 
     public async Task<IEnumerable<string>> GetGroupMembersAsync(string group, CancellationToken stoppingToken)
@@ -39,14 +40,16 @@ public class RedisServiceRegistry : IServiceRegistry
         EndPoint endpoint = _multiplexer.GetEndPoints().First();
         IServer server = _multiplexer.GetServer(endpoint);
         
-        IAsyncEnumerable<RedisKey> keys = server.KeysAsync(pattern: $"{WORKERS_GROUP_PREFIX}/{group}-*");
+        IAsyncEnumerable<RedisKey> keys = server.KeysAsync(pattern: $"{group}*");
 
         var groupMembers = new List<string>();
         await foreach (RedisKey key in keys)
         {
-            string[] keySegments = key.ToString().Split('-');
+            string[] keySegments = key.ToString().Split(GROUP_NAME_SEPARATOR);
             groupMembers.Add(keySegments[1]);
         }
+        
+        groupMembers.Sort();
 
         return groupMembers;
     }
@@ -59,7 +62,7 @@ public class RedisServiceRegistry : IServiceRegistry
             
             if (Interlocked.Increment(ref _subscribersCount) == 1)
             {
-                _multiplexer.GetSubscriber().Subscribe(WORKERS_GROUP_PREFIX, OnServiceGroupChanged);
+                _multiplexer.GetSubscriber().Subscribe(GROUP_NOTIFICATIONS_CHANNEL, OnServiceGroupChanged);
             }
         }
         remove
@@ -68,7 +71,7 @@ public class RedisServiceRegistry : IServiceRegistry
 
             if (Interlocked.Decrement(ref _subscribersCount) == 0)
             {
-                _multiplexer.GetSubscriber().Unsubscribe(WORKERS_GROUP_PREFIX);
+                _multiplexer.GetSubscriber().Unsubscribe(GROUP_NOTIFICATIONS_CHANNEL);
             }
         }
     }
