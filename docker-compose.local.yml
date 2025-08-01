@@ -1,0 +1,12 @@
+networks:
+  game-scores:
+    driver: bridge
+
+services:
+  game-scores_redis:
+    image: redis:8.0
+    container_name: game-scores_redis
+    networks:
+      - game-scores
+    ports:
+      - "6379:6379"

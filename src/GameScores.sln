@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{8F31D162-E2B2-481D-AE4F-253700CA62C3}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		..\docker-compose.local.yml = ..\docker-compose.local.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Seed URLs Collector", "Seed URLs Collector", "{1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}"
@@ -25,6 +26,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor.WorkerConfig", "SeedUrlExtractor\GameScores.SeedUrlExtractor.WorkerConfig\GameScores.SeedUrlExtractor.WorkerConfig.csproj", "{47953891-9DC5-476D-B6DB-069D234A46A4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games Collector Worker", "Games Collector Worker", "{3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesCollector.LiveScoresCom.Worker", "GamesCollectorWorker\GameScores.GamesCollector.LiveScoresCom.Worker\GameScores.GamesCollector.LiveScoresCom.Worker.csproj", "{C19D0FE6-103E-471A-8C26-3360DF9DE81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesCollector.ServiceDiscovery.Contracts", "GamesCollectorWorker\GameScores.GamesCollector.ServiceDiscovery.Contracts\GameScores.GamesCollector.ServiceDiscovery.Contracts.csproj", "{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesCollector.ServiceDiscovery.Redis", "GamesCollectorWorker\GameScores.GamesCollector.ServiceDiscovery.Redis\GameScores.GamesCollector.ServiceDiscovery.Redis.csproj", "{3EAA6866-098C-435C-98B8-4C978D5BEB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesCollector.Worker", "GamesCollectorWorker\GameScores.GamesCollector.Worker\GameScores.GamesCollector.Worker.csproj", "{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +51,10 @@ Global
 		{470B3F87-286C-4CEA-92C7-72A5BCACE0DE} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 		{217BEB02-1413-4094-8144-32AD4E6CCBA5} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 		{47953891-9DC5-476D-B6DB-069D234A46A4} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
+		{C19D0FE6-103E-471A-8C26-3360DF9DE81F} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
+		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
+		{3EAA6866-098C-435C-98B8-4C978D5BEB9A} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
+		{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19F3DA30-F578-48B7-B459-A55562972589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -78,5 +93,21 @@ Global
 		{47953891-9DC5-476D-B6DB-069D234A46A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47953891-9DC5-476D-B6DB-069D234A46A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47953891-9DC5-476D-B6DB-069D234A46A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EAA6866-098C-435C-98B8-4C978D5BEB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EAA6866-098C-435C-98B8-4C978D5BEB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EAA6866-098C-435C-98B8-4C978D5BEB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EAA6866-098C-435C-98B8-4C978D5BEB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E166A1D9-A027-4CD4-90E7-0EAF4DD209C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
