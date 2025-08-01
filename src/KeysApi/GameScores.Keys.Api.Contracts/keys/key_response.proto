@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option csharp_namespace = "GameScores.Keys.Api.Contracts";
+
+package game_scores_keys_api;
+
+message KeyResponse {
+  string key = 1;
+}
