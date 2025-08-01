@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -16,10 +15,6 @@ public class RedisServiceRegistry : IServiceRegistry
     private const char GROUP_NAME_SEPARATOR = '/';
     
     private readonly IConnectionMultiplexer _multiplexer;
-
-    private EventHandler<ServiceGroupChangedEventArgs>? _serviceGroupChanged;
-    
-    private int _subscribersCount;
 
     public RedisServiceRegistry(IConnectionMultiplexer multiplexer)
     {
@@ -52,36 +47,5 @@ public class RedisServiceRegistry : IServiceRegistry
         groupMembers.Sort();
 
         return groupMembers;
-    }
-
-    public event EventHandler<ServiceGroupChangedEventArgs>? ServiceGroupChanged
-    {
-        add
-        {
-            _serviceGroupChanged += value;
-            
-            if (Interlocked.Increment(ref _subscribersCount) == 1)
-            {
-                _multiplexer.GetSubscriber().Subscribe(GROUP_NOTIFICATIONS_CHANNEL, OnServiceGroupChanged);
-            }
-        }
-        remove
-        {
-            _serviceGroupChanged -= value;
-
-            if (Interlocked.Decrement(ref _subscribersCount) == 0)
-            {
-                _multiplexer.GetSubscriber().Unsubscribe(GROUP_NOTIFICATIONS_CHANNEL);
-            }
-        }
-    }
-
-    private void OnServiceGroupChanged(RedisChannel channel, RedisValue value)
-    {
-        var eventHandler = Volatile.Read(ref _serviceGroupChanged);
-        if (eventHandler != null)
-        {
-            eventHandler(this, new ServiceGroupChangedEventArgs());
-        }
     }
 }

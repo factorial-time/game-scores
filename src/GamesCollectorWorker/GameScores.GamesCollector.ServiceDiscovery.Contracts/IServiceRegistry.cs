@@ -10,6 +10,4 @@ public interface IServiceRegistry
     Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken);
 
     Task<IEnumerable<string>> GetGroupMembersAsync(string group, CancellationToken stoppingToken);
-
-    event EventHandler<ServiceGroupChangedEventArgs> ServiceGroupChanged;
 }

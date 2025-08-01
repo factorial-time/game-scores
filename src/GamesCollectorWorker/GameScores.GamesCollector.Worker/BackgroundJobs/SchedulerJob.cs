@@ -44,7 +44,6 @@ public class SchedulerJob : BackgroundService
     
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        _serviceRegistry.ServiceGroupChanged += OnServiceGroupChanged;
         await _serviceRegistry.RegisterAsync(
             _serviceName,
             ServiceIdentifierProvider.Instance.ServiceInstanceId,
@@ -66,10 +65,5 @@ public class SchedulerJob : BackgroundService
 
             await Task.Delay(_config.PullTimeout, stoppingToken);
         }
-    }
-    
-    private void OnServiceGroupChanged(object? sender, ServiceGroupChangedEventArgs e)
-    {
-        _urlWorkingSetNotifications.Writer.TryWrite(true);
     }
 }
