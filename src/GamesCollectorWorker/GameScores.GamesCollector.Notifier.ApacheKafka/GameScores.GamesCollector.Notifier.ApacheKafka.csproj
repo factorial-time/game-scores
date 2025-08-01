@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GameScores.GamesCollector.Dto\GameScores.GamesCollector.Dto.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Notifier.Contracts\GameScores.GamesCollector.Notifier.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
