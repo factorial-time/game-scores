@@ -17,6 +17,7 @@
     <ItemGroup>
       <ProjectReference Include="..\GameScores.GamesCollector.SeedUrlProvider.Contracts\GameScores.GamesCollector.SeedUrlProvider.Contracts.csproj" />
       <ProjectReference Include="..\GameScores.GamesCollector.ServiceDiscovery.Contracts\GameScores.GamesCollector.ServiceDiscovery.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.UrlProcessor.Contracts\GameScores.GamesCollector.UrlProcessor.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

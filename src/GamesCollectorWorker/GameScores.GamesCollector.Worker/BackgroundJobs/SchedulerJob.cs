@@ -6,6 +6,7 @@ using System.Threading.Channels;
 using System.Threading.Tasks;
 using GameScores.GamesCollector.SeedUrlProvider.Contracts;
 using GameScores.GamesCollector.ServiceDiscovery.Contracts;
+using GameScores.GamesCollector.UrlProcessor.Contracts;
 using GameScores.GamesCollector.Worker.Config;
 using GameScores.GamesCollector.Worker.WorkingSet;
 using Microsoft.Extensions.Hosting;
@@ -18,6 +19,8 @@ public class SchedulerJob : BackgroundService
     private readonly ISeedUrlProvider _seedUrlProvider;
 
     private readonly IServiceRegistry _serviceRegistry;
+
+    private readonly IUrlProcessor _processor;
     
     private readonly DataCollectorConfig _config;
     
@@ -28,10 +31,12 @@ public class SchedulerJob : BackgroundService
     public SchedulerJob(
         ISeedUrlProvider seedUrlProvider,
         IServiceRegistry serviceRegistry,
+        IUrlProcessor processor,
         IOptions<DataCollectorConfig> config)
     {
         _seedUrlProvider = seedUrlProvider;
         _serviceRegistry = serviceRegistry;
+        _processor = processor;
         _config = config.Value;
         
         _serviceName = _config.TargetUrl.Host;
@@ -56,6 +61,7 @@ public class SchedulerJob : BackgroundService
             int currentWorkerIndex = Array.IndexOf(groupMembers, ServiceIdentifierProvider.Instance.ServiceInstanceId);
             foreach (Uri url in UrlWorkingSet.Instance.GetAssignedUrls(currentWorkerIndex, groupMembers.Length))
             {
+                await _processor.ProcessAsync(url, stoppingToken);
             }
 
             await Task.Delay(_config.PullTimeout, stoppingToken);

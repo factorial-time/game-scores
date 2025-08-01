@@ -7,9 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\GameScores.GamesCollector.Downloader.Contracts\GameScores.GamesCollector.Downloader.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Downloader\GameScores.GamesCollector.Downloader.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Notifier.ApacheKafka\GameScores.GamesCollector.Notifier.ApacheKafka.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Notifier.Contracts\GameScores.GamesCollector.Notifier.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Parser.Contracts\GameScores.GamesCollector.Parser.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.Parser.LiveScoresCom\GameScores.GamesCollector.Parser.LiveScoresCom.csproj" />
       <ProjectReference Include="..\GameScores.GamesCollector.SeedUrlProvider\GameScores.GamesCollector.SeedUrlProvider.csproj" />
       <ProjectReference Include="..\GameScores.GamesCollector.ServiceDiscovery.Contracts\GameScores.GamesCollector.ServiceDiscovery.Contracts.csproj" />
       <ProjectReference Include="..\GameScores.GamesCollector.ServiceDiscovery.Redis\GameScores.GamesCollector.ServiceDiscovery.Redis.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.UrlProcessor.Contracts\GameScores.GamesCollector.UrlProcessor.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesCollector.UrlProcessor\GameScores.GamesCollector.UrlProcessor.csproj" />
       <ProjectReference Include="..\GameScores.GamesCollector.Worker\GameScores.GamesCollector.Worker.csproj" />
     </ItemGroup>
 
