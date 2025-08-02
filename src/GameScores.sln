@@ -74,6 +74,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.Keys.UseCases", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.Keys.Dto", "KeysApi\GameScores.Keys.Dto\GameScores.Keys.Dto.csproj", "{9FD6156A-0422-42D2-A4FF-8F0EC8F6C6DA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Game Updates Loader", "Game Updates Loader", "{F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games Storage Service", "Games Storage Service", "{70317102-F7AD-401F-8DE2-9AB78F9DB845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.Worker", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.Worker\GameScores.GamesStorageService.GameUpdatesLoader.Worker.csproj", "{400EF2B2-E90D-4180-90AB-06ABEB2FC184}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.Dto", "GamesStorageService\Shared\GameScores.GamesStorageService.Dto\GameScores.GamesStorageService.Dto.csproj", "{5835050D-9C32-4601-8DC0-B5C17699DCF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts.csproj", "{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.csproj", "{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.Storage.Contracts", "GamesStorageService\Shared\GameScores.GamesStorageService.Storage.Contracts\GameScores.GamesStorageService.Storage.Contracts.csproj", "{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts.csproj", "{281EA37E-A2AE-4519-ACF4-50485B2126F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.csproj", "{88157F63-190C-4F70-B8F4-1DA3E1D463D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +131,15 @@ Global
 		{A450C0C9-68CA-459B-B6BE-E82ED6B14615} = {E9598EF7-ADCA-4613-972B-3921090DEBFF}
 		{0EE155F9-451E-40DA-8737-F3A3E8272C5B} = {E9598EF7-ADCA-4613-972B-3921090DEBFF}
 		{9FD6156A-0422-42D2-A4FF-8F0EC8F6C6DA} = {E9598EF7-ADCA-4613-972B-3921090DEBFF}
+		{F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787} = {70317102-F7AD-401F-8DE2-9AB78F9DB845}
+		{400EF2B2-E90D-4180-90AB-06ABEB2FC184} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
+		{B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D} = {70317102-F7AD-401F-8DE2-9AB78F9DB845}
+		{5835050D-9C32-4601-8DC0-B5C17699DCF8} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
+		{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
+		{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
+		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
+		{281EA37E-A2AE-4519-ACF4-50485B2126F2} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
+		{88157F63-190C-4F70-B8F4-1DA3E1D463D1} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19F3DA30-F578-48B7-B459-A55562972589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -237,5 +266,33 @@ Global
 		{9FD6156A-0422-42D2-A4FF-8F0EC8F6C6DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD6156A-0422-42D2-A4FF-8F0EC8F6C6DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD6156A-0422-42D2-A4FF-8F0EC8F6C6DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{400EF2B2-E90D-4180-90AB-06ABEB2FC184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{400EF2B2-E90D-4180-90AB-06ABEB2FC184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{400EF2B2-E90D-4180-90AB-06ABEB2FC184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{400EF2B2-E90D-4180-90AB-06ABEB2FC184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5835050D-9C32-4601-8DC0-B5C17699DCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5835050D-9C32-4601-8DC0-B5C17699DCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5835050D-9C32-4601-8DC0-B5C17699DCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5835050D-9C32-4601-8DC0-B5C17699DCF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B424BF-4179-45D1-BDE7-2B3C1594F2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF89FD7C-6CB7-428C-AED0-B648C5DB3FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{281EA37E-A2AE-4519-ACF4-50485B2126F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{281EA37E-A2AE-4519-ACF4-50485B2126F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{281EA37E-A2AE-4519-ACF4-50485B2126F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{281EA37E-A2AE-4519-ACF4-50485B2126F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
