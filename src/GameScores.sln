@@ -102,6 +102,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.UseCases", "GamesStorageService\RestApi\GameScores.GamesStorageService.UseCases\GameScores.GamesStorageService.UseCases.csproj", "{FAB71ECE-E114-4D06-96E8-AE442A2F3374}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.Storage.PostgreSql", "GamesStorageService\Shared\GameScores.GamesStorageService.Storage.PostgreSql\GameScores.GamesStorageService.Storage.PostgreSql.csproj", "{887CF0CA-D69F-470A-B60C-7A082977E2C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,7 @@ Global
 		{65504E71-70C6-4000-9BC0-7CC28E532FB9} = {A55501F2-FD31-4901-9B67-F207098A1822}
 		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C} = {A55501F2-FD31-4901-9B67-F207098A1822}
 		{FAB71ECE-E114-4D06-96E8-AE442A2F3374} = {A55501F2-FD31-4901-9B67-F207098A1822}
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19F3DA30-F578-48B7-B459-A55562972589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -318,5 +321,9 @@ Global
 		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
