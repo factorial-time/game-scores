@@ -23,6 +23,6 @@ public class DataProcessor : IDataProcessor
     public async Task ProcessGameAsync(Game game, CancellationToken stoppingToken)
     {
         Guid gameId = await _keysProvider.GetKeyAsync(game, stoppingToken);
-        await _gamesStorage.SaveGameAsync(gameId, game, stoppingToken);
+        await _gamesStorage.SaveAsync(gameId, game, stoppingToken);
     }
 }
