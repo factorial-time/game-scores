@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using GameScores.Keys.Dto;
@@ -16,5 +17,5 @@ public class ObtainKeyUseCase : IObtainKeyUseCase
     }
 
     public Task<string> ObtainKeyAsync(KeyData data, CancellationToken stoppingToken) =>
-        _storage.ObtainKeyAsync(data, stoppingToken);
+        _storage.ObtainKeyAsync(Guid.NewGuid().ToString(), data, stoppingToken);
 }

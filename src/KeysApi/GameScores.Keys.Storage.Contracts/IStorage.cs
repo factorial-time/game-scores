@@ -6,5 +6,5 @@ namespace GameScores.Keys.Storage.Contracts;
 
 public interface IStorage
 {
-    Task<string> ObtainKeyAsync(KeyData data, CancellationToken stoppingToken);
+    Task<string> ObtainKeyAsync(string key, KeyData data, CancellationToken stoppingToken);
 }
