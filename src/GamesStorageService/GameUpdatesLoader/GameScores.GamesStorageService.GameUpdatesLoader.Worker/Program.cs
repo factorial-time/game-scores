@@ -3,6 +3,8 @@ using GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor;
 using GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts;
 using GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.DependencyInjection;
 using GameScores.GamesStorageService.GameUpdatesLoader.Worker.BackgroundJobs;
+using GameScores.GamesStorageService.Storage.Contracts;
+using GameScores.GamesStorageService.Storage.PostgreSql;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,6 +23,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         {
             services
                 .AddKeysProvider(ctx.Configuration)
+                .AddSingleton<IGamesStorage, GamesStorage>()
                 .AddSingleton<IDataProcessor, DataProcessor>()
                 .AddHostedService<GameUpdatesHandlerJob>();
         }
