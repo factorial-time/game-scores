@@ -39,10 +39,13 @@ public class Storage : IStorage
         keyBuilder.Append(':');
         keyBuilder.Append(data.CompetitionName.ToLower());
         keyBuilder.Append(':');
+        
+        string[] teams = data.Teams.Select(team => team.ToLower()).ToArray();
+        Array.Sort(teams);
 
-        foreach (string team in data.Teams)
+        foreach (string team in teams)
         {
-            keyBuilder.Append(team.ToLower());
+            keyBuilder.Append(team);
             keyBuilder.Append('_');
         }
 
