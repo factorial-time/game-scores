@@ -94,6 +94,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider", "GamesStorageService\GameUpdatesLoader\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.csproj", "{88157F63-190C-4F70-B8F4-1DA3E1D463D1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "REST API", "REST API", "{A55501F2-FD31-4901-9B67-F207098A1822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.RestApi", "GamesStorageService\RestApi\GameScores.GamesStorageService.RestApi\GameScores.GamesStorageService.RestApi.csproj", "{65504E71-70C6-4000-9BC0-7CC28E532FB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.UseCases.Contracts", "GamesStorageService\RestApi\GameScores.GamesStorageService.UseCases.Contracts\GameScores.GamesStorageService.UseCases.Contracts.csproj", "{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.UseCases", "GamesStorageService\RestApi\GameScores.GamesStorageService.UseCases\GameScores.GamesStorageService.UseCases.csproj", "{FAB71ECE-E114-4D06-96E8-AE442A2F3374}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.Storage.PostgreSql", "GamesStorageService\Shared\GameScores.GamesStorageService.Storage.PostgreSql\GameScores.GamesStorageService.Storage.PostgreSql.csproj", "{887CF0CA-D69F-470A-B60C-7A082977E2C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +150,11 @@ Global
 		{DB4E9BA2-9002-4CE1-8D80-A13E00A1C139} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
 		{281EA37E-A2AE-4519-ACF4-50485B2126F2} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
 		{88157F63-190C-4F70-B8F4-1DA3E1D463D1} = {F2AF1D97-EBF7-4776-BC6D-F8B9D0A40787}
+		{A55501F2-FD31-4901-9B67-F207098A1822} = {70317102-F7AD-401F-8DE2-9AB78F9DB845}
+		{65504E71-70C6-4000-9BC0-7CC28E532FB9} = {A55501F2-FD31-4901-9B67-F207098A1822}
+		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C} = {A55501F2-FD31-4901-9B67-F207098A1822}
+		{FAB71ECE-E114-4D06-96E8-AE442A2F3374} = {A55501F2-FD31-4901-9B67-F207098A1822}
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19F3DA30-F578-48B7-B459-A55562972589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -294,5 +309,21 @@ Global
 		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88157F63-190C-4F70-B8F4-1DA3E1D463D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65504E71-70C6-4000-9BC0-7CC28E532FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65504E71-70C6-4000-9BC0-7CC28E532FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65504E71-70C6-4000-9BC0-7CC28E532FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65504E71-70C6-4000-9BC0-7CC28E532FB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAB71ECE-E114-4D06-96E8-AE442A2F3374}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

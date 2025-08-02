@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\GameScores.GamesStorageService.Storage.Contracts\GameScores.GamesStorageService.Storage.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.UseCases.Contracts\GameScores.GamesStorageService.UseCases.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
