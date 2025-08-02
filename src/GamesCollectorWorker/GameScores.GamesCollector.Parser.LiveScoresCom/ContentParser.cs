@@ -12,7 +12,7 @@ public class ContentParser : IContentParser
             SportType = "Football",
             CompetitionName = " Premier League",
             Teams = ["Liverpool", "AFC Bournemouth"],
-            EventDate = DateTime.UtcNow,
+            EventDate = DateTime.UtcNow
         };
     }
 }

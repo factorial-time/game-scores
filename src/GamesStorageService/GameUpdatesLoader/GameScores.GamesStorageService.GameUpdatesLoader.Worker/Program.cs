@@ -1,4 +1,7 @@
 ﻿using System;
+using GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor;
+using GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts;
+using GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.DependencyInjection;
 using GameScores.GamesStorageService.GameUpdatesLoader.Worker.BackgroundJobs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +20,8 @@ IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((ctx, services) =>
         {
             services
+                .AddKeysProvider(ctx.Configuration)
+                .AddSingleton<IDataProcessor, DataProcessor>()
                 .AddHostedService<GameUpdatesHandlerJob>();
         }
     )

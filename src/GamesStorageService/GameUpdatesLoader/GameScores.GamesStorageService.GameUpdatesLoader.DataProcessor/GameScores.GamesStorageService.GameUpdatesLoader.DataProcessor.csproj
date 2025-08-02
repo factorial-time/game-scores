@@ -8,6 +8,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Shared\GameScores.GamesStorageService.Storage.Contracts\GameScores.GamesStorageService.Storage.Contracts.csproj" />
       <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts.csproj" />
     </ItemGroup>
 
 </Project>

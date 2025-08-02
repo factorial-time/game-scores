@@ -6,4 +6,11 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor\GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider\GameScores.GamesStorageService.GameUpdatesLoader.KeysProvider.csproj" />
+    </ItemGroup>
+
 </Project>
