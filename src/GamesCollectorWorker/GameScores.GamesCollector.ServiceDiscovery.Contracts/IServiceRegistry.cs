@@ -10,4 +10,6 @@ public interface IServiceRegistry
     Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken);
 
     Task<IEnumerable<string>> GetGroupMembersAsync(string group, CancellationToken stoppingToken);
+    
+    Task HeartbeatAsync(string groupId, string serviceId, CancellationToken stoppingToken);
 }

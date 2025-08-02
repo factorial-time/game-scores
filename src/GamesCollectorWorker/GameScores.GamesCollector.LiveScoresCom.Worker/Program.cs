@@ -36,6 +36,7 @@ IHost host = Host.CreateDefaultBuilder(args)
                 .AddSingleton<IWebPageDownloader, WebPageDownloader>()
                 .AddSingleton<IContentParser, ContentParser>()
                 .AddSingleton<INotifier, Notifier>()
+                .AddHostedService<HeartbeatJob>()
                 .AddHostedService<SchedulerJob>();
         }
     )

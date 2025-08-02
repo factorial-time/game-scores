@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,8 +11,6 @@ namespace GameScores.GamesCollector.ServiceDiscovery.Redis;
 
 public class RedisServiceRegistry : IServiceRegistry
 {
-    private const string GROUP_NOTIFICATIONS_CHANNEL = "workers";
-
     private const char GROUP_NAME_SEPARATOR = '/';
     
     private readonly IConnectionMultiplexer _multiplexer;
@@ -20,15 +19,13 @@ public class RedisServiceRegistry : IServiceRegistry
     {
         _multiplexer = multiplexer;
     }
-    
-    public async Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken)
-    {
-        var serviceKey = $"{groupId}{GROUP_NAME_SEPARATOR}{serviceId}";
-        
-        await _multiplexer.GetDatabase().StringSetAsync(serviceKey, string.Empty);
 
-        await _multiplexer.GetSubscriber().PublishAsync(GROUP_NOTIFICATIONS_CHANNEL, string.Empty);
-    }
+    public Task RegisterAsync(string groupId, string serviceId, CancellationToken stoppingToken) =>
+        _multiplexer.GetDatabase().StringSetAsync(
+            GetServiceKey(groupId, serviceId),
+            string.Empty,
+            TimeSpan.FromSeconds(30)
+        );
 
     public async Task<IEnumerable<string>> GetGroupMembersAsync(string group, CancellationToken stoppingToken)
     {
@@ -48,4 +45,13 @@ public class RedisServiceRegistry : IServiceRegistry
 
         return groupMembers;
     }
+
+    public Task HeartbeatAsync(string groupId, string serviceId, CancellationToken stoppingToken) =>
+        _multiplexer.GetDatabase().KeyExpireAsync(
+            GetServiceKey(groupId, serviceId),
+            TimeSpan.FromSeconds(30)
+        );
+
+    private static string GetServiceKey(string groupId, string serviceId) =>
+        $"{groupId}{GROUP_NAME_SEPARATOR}{serviceId}";
 }
