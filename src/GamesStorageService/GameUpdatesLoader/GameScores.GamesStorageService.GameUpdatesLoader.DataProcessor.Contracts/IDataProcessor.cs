@@ -6,5 +6,5 @@ namespace GameScores.GamesStorageService.GameUpdatesLoader.DataProcessor.Contrac
 
 public interface IDataProcessor
 {
-    Task<Game> ProcessGameAsync(Game game, CancellationToken stoppingToken);
+    Task ProcessGameAsync(Game game, CancellationToken stoppingToken);
 }

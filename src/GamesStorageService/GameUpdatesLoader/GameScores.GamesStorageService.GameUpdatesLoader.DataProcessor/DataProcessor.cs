@@ -20,9 +20,9 @@ public class DataProcessor : IDataProcessor
         _gamesStorage = gamesStorage;
     }
     
-    public async Task<Game> ProcessGameAsync(Game game, CancellationToken stoppingToken)
+    public async Task ProcessGameAsync(Game game, CancellationToken stoppingToken)
     {
-        Guid key = await _keysProvider.GetKeyAsync(game, stoppingToken);
-        throw new System.NotImplementedException();
+        Guid gameId = await _keysProvider.GetKeyAsync(game, stoppingToken);
+        await _gamesStorage.SaveGameAsync(gameId, game, stoppingToken);
     }
 }
