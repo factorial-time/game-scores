@@ -17,13 +17,15 @@ public class Storage : IStorage
     public async Task<string> ObtainKeyAsync(string key, KeyData data, CancellationToken stoppingToken)
     {
         string objectKey = GetObjectKey(data);
-        RedisValue storedKey = await _multiplexer.GetDatabase().StringSetAndGetAsync(
+        await _multiplexer.GetDatabase().StringSetAsync(
             objectKey,
             key,
             //  ToDo: TTL shouldn't be hardcoded. TTL depends on sport type and it should be a part of service contract.
             expiry: TimeSpan.FromHours(2),
             when: When.NotExists
         );
+
+        RedisValue storedKey = await _multiplexer.GetDatabase().StringGetAsync(objectKey);
 
         return storedKey.ToString();
     }
