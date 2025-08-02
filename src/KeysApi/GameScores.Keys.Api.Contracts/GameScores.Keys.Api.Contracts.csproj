@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.31.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Protobuf Include="keys\get_key_request.proto" />
+      <Protobuf Include="keys\key_response.proto" />
+      <Protobuf Include="keys\keys_service.proto" />
+    </ItemGroup>
+
+</Project>

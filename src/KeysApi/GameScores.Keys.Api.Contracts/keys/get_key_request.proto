@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option csharp_namespace = "GameScores.Keys.Api.Contracts";
+
+package game_scores_keys_api;
+
+message GetKeyRequest {
+  string sport_type = 1;
+  string competition_name = 2;
+  repeated string teams = 3;
+}

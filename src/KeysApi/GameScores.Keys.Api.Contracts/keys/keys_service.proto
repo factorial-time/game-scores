@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+option csharp_namespace = "GameScores.Keys.Api.Contracts";
+
+package game_scores_keys_api;
+
+import "keys/get_key_request.proto";
+import "keys/key_response.proto";
+
+service KeysService {
+  rpc GetKey(GetKeyRequest) returns (KeyResponse);
+}
