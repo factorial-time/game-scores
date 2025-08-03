@@ -1,6 +1,6 @@
 using System;
 
-namespace GameScores.SeedUrlExtractor.WorkerConfig;
+namespace GameScores.SeedUrlExtractor.Worker.Config;
 
 public sealed record CrawlerConfig
 {

@@ -2,12 +2,12 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using GameScores.SeedUrlExtractor.UseCases.Contracts;
-using GameScores.SeedUrlExtractor.WorkerConfig;
+using GameScores.SeedUrlExtractor.Worker.Config;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace GameScores.SeedUrlExtractor.LiveScoresCom.Worker.BackgroundJobs;
+namespace GameScores.SeedUrlExtractor.Worker.BackgroundJobs;
 
 public sealed class CrawlerJob : BackgroundService
 {
