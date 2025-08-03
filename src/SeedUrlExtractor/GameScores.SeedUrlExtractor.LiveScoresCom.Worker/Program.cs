@@ -1,12 +1,12 @@
 ﻿using System;
 using GameScores.SeedUrlExtractor.DataStorage.Contracts;
 using GameScores.SeedUrlExtractor.DataStorage.Redis;
-using GameScores.SeedUrlExtractor.LiveScoresCom.Worker.BackgroundJobs;
 using GameScores.SeedUrlExtractor.UrlExtractor.Contracts;
 using GameScores.SeedUrlExtractor.UrlExtractor.LiveScoresCom;
 using GameScores.SeedUrlExtractor.UseCases;
 using GameScores.SeedUrlExtractor.UseCases.Contracts;
-using GameScores.SeedUrlExtractor.WorkerConfig;
+using GameScores.SeedUrlExtractor.Worker.BackgroundJobs;
+using GameScores.SeedUrlExtractor.Worker.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

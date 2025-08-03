@@ -24,8 +24,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor.UseCases.Contracts", "SeedUrlExtractor\GameScores.SeedUrlExtractor.UseCases.Contracts\GameScores.SeedUrlExtractor.UseCases.Contracts.csproj", "{217BEB02-1413-4094-8144-32AD4E6CCBA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor.WorkerConfig", "SeedUrlExtractor\GameScores.SeedUrlExtractor.WorkerConfig\GameScores.SeedUrlExtractor.WorkerConfig.csproj", "{47953891-9DC5-476D-B6DB-069D234A46A4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Games Collector Worker", "Games Collector Worker", "{3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesCollector.LiveScoresCom.Worker", "GamesCollectorWorker\GameScores.GamesCollector.LiveScoresCom.Worker\GameScores.GamesCollector.LiveScoresCom.Worker.csproj", "{C19D0FE6-103E-471A-8C26-3360DF9DE81F}"
@@ -104,6 +102,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageServ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.GamesStorageService.Storage.PostgreSql", "GamesStorageService\Shared\GameScores.GamesStorageService.Storage.PostgreSql\GameScores.GamesStorageService.Storage.PostgreSql.csproj", "{887CF0CA-D69F-470A-B60C-7A082977E2C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameScores.SeedUrlExtractor.Worker", "SeedUrlExtractor\GameScores.SeedUrlExtractor.Worker\GameScores.SeedUrlExtractor.Worker.csproj", "{6A5CC664-2542-4E0E-B995-FA23BD354D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,7 +118,6 @@ Global
 		{92A81DA6-B362-49F9-B611-40878EAF25C6} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 		{470B3F87-286C-4CEA-92C7-72A5BCACE0DE} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 		{217BEB02-1413-4094-8144-32AD4E6CCBA5} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
-		{47953891-9DC5-476D-B6DB-069D234A46A4} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 		{C19D0FE6-103E-471A-8C26-3360DF9DE81F} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
 		{D317F4AF-3F5B-4140-8AB9-95C25E76AFB9} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
 		{3EAA6866-098C-435C-98B8-4C978D5BEB9A} = {3C149BB7-BE46-4C46-ABF8-7B50A93E8ECC}
@@ -155,6 +154,7 @@ Global
 		{B90B2ABC-4DA9-40A7-8C54-695A6C4F223C} = {A55501F2-FD31-4901-9B67-F207098A1822}
 		{FAB71ECE-E114-4D06-96E8-AE442A2F3374} = {A55501F2-FD31-4901-9B67-F207098A1822}
 		{887CF0CA-D69F-470A-B60C-7A082977E2C8} = {B88A75BE-A6D3-456C-9DE5-4DE7284A0C3D}
+		{6A5CC664-2542-4E0E-B995-FA23BD354D39} = {1C3399FC-B5F1-4CB7-944D-2FAE8B67193D}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{19F3DA30-F578-48B7-B459-A55562972589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -189,10 +189,6 @@ Global
 		{217BEB02-1413-4094-8144-32AD4E6CCBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217BEB02-1413-4094-8144-32AD4E6CCBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217BEB02-1413-4094-8144-32AD4E6CCBA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{47953891-9DC5-476D-B6DB-069D234A46A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{47953891-9DC5-476D-B6DB-069D234A46A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{47953891-9DC5-476D-B6DB-069D234A46A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{47953891-9DC5-476D-B6DB-069D234A46A4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C19D0FE6-103E-471A-8C26-3360DF9DE81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -325,5 +321,9 @@ Global
 		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{887CF0CA-D69F-470A-B60C-7A082977E2C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5CC664-2542-4E0E-B995-FA23BD354D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5CC664-2542-4E0E-B995-FA23BD354D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5CC664-2542-4E0E-B995-FA23BD354D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5CC664-2542-4E0E-B995-FA23BD354D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

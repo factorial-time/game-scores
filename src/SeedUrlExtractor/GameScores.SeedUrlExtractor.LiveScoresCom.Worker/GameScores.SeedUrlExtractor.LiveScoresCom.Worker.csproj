@@ -11,7 +11,7 @@
       <ProjectReference Include="..\GameScores.SeedUrlExtractor.UrlExtractor.LiveScoresCom\GameScores.SeedUrlExtractor.UrlExtractor.LiveScoresCom.csproj" />
       <ProjectReference Include="..\GameScores.SeedUrlExtractor.UseCases.Contracts\GameScores.SeedUrlExtractor.UseCases.Contracts.csproj" />
       <ProjectReference Include="..\GameScores.SeedUrlExtractor.UseCases\GameScores.SeedUrlExtractor.UseCases.csproj" />
-      <ProjectReference Include="..\GameScores.SeedUrlExtractor.WorkerConfig\GameScores.SeedUrlExtractor.WorkerConfig.csproj" />
+      <ProjectReference Include="..\GameScores.SeedUrlExtractor.Worker\GameScores.SeedUrlExtractor.Worker.csproj" />
     </ItemGroup>
 
     <ItemGroup>
