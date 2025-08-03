@@ -9,7 +9,17 @@ public interface IGamesStorage
 {
     Task<GameInfo?> GetByIdAsync(Guid gameId, CancellationToken stoppingToken);
 
-    Task<DataPage<GameInfo>> GetListAsync(int pageIndex, int pageSize, CancellationToken stoppingToken);
+    Task<DataPage<GameInfo>> GetListBySportTypeAsync(
+        string sportType,
+        int pageIndex,
+        int pageSize,
+        CancellationToken stoppingToken);
+    
+    Task<DataPage<GameInfo>> GetListByCompetitionAsync(
+        string competition,
+        int pageIndex,
+        int pageSize,
+        CancellationToken stoppingToken);
     
     Task SaveAsync(Guid gameId, Game game, CancellationToken stoppingToken);
 }

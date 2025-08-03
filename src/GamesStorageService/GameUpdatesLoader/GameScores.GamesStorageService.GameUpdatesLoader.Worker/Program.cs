@@ -23,7 +23,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         {
             services
                 .AddKeysProvider(ctx.Configuration)
-                .AddSingleton<IGamesStorage, GamesStorage>()
+                .AddSingleton<IGamesStorage, PostgreSqlGamesStorage>()
                 .AddSingleton<IDataProcessor, DataProcessor>()
                 .AddHostedService<GameUpdatesHandlerJob>();
         }
