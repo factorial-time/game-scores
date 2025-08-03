@@ -10,3 +10,14 @@ services:
       - game-scores
     ports:
       - "6379:6379"
+  
+  game-scores_postgresql:
+    container_name: game-scores_postgresql
+    image: postgres:17.5
+    networks:
+      - game-scores
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
