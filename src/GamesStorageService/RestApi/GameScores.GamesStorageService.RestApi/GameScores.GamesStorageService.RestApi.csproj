@@ -6,6 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\Shared\GameScores.GamesStorageService.Storage.PostgreSql\GameScores.GamesStorageService.Storage.PostgreSql.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.Cache.Contracts\GameScores.GamesStorageService.Cache.Contracts.csproj" />
+      <ProjectReference Include="..\GameScores.GamesStorageService.Cache.Redis\GameScores.GamesStorageService.Cache.Redis.csproj" />
       <ProjectReference Include="..\GameScores.GamesStorageService.UseCases.Contracts\GameScores.GamesStorageService.UseCases.Contracts.csproj" />
       <ProjectReference Include="..\GameScores.GamesStorageService.UseCases\GameScores.GamesStorageService.UseCases.csproj" />
     </ItemGroup>
